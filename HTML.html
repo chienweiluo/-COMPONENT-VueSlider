@@ -1,0 +1,18 @@
+<head>
+link.https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+script.https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js
+</head>
+<div id="app">
+  <div class="container" :style="computed_left">
+    <div class="cards">
+      <div class="card" v-for="(card,id) in img_info" :class="{cur_items: id==now_index}">
+        <div class="cover" :style="bgs(card.url)">
+          <h1>{{ card.title }}</h1>
+          <h5>{{ card.sub_title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <a id="left" @click="delta(-1)"><i class="fa fa-arrow-circle-left"></i></a>
+  <a id="right" @click="delta(1)"><i class="fa fa-arrow-circle-right"></i></a>
+</div>
